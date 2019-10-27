@@ -1,0 +1,66 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui">
+                     <h:form rendered="#{userBean.isAuthenticated}">
+                     <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">   
+				
+				<h:panelGroup rendered="#{userBean.role.equals('President')}">
+				<li class="active nav-item">
+				<h:commandLink action="/back-pages/index?faces-redirect=true" styleClass="nav-link">  Dashboard  <i class="material-icons">dashboard</i> </h:commandLink>
+                </li>
+				</h:panelGroup>
+				
+				<h:panelGroup rendered="#{userBean.role.equals('Organizer')}">
+				<li class="active nav-item">
+				<h:commandLink action="Backend?faces-redirect=true" styleClass="nav-link">  Dashboard  <i class="material-icons">dashboard</i> </h:commandLink>
+                </li>
+				</h:panelGroup>
+                
+                <h:panelGroup rendered="#{userBean.role.equals('Administrator')}">
+				<li class="active nav-item">
+				<h:commandLink action="/back-pages/tenant_validation?faces-redirect=true" styleClass="nav-link">  Dashboard  <i class="material-icons">dashboard</i> </h:commandLink> 
+                </li>
+				</h:panelGroup>
+                                
+                <li class="nav-item dropdown">
+                    <a class="nav-link" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        #{userBean.userName} <i class="material-icons">person</i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
+                    
+                    <h:panelGroup rendered="#{userBean.role.equals('Organizer')}">					
+					<h:commandLink action="/back-pages/profile?faces-redirect=true" value="Profile" styleClass="dropdown-item"/>                	
+					</h:panelGroup>
+					<h:panelGroup rendered="#{userBean.role.equals('President')}">					
+					<h:commandLink action="/back-pages/profile?faces-redirect=true" value="Profile" styleClass="dropdown-item"/>               	
+					</h:panelGroup>
+					
+
+                        <a class="dropdown-item" href="#">Settings</a>
+                        <div class="dropdown-divider"></div>
+                        <h:commandButton value="Log out" action="#{userBean.Logout()}" styleClass="dropdown-item" />
+                    </div>
+                </li>
+            </ul>
+        </div>
+     </h:form>
+     
+     <h:panelGroup rendered="#{!userBean.isAuthenticated}">
+     <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <h:form> <h:commandLink action="login?faces-redirect=true" value="Sign In" styleClass="btn btn-rose btn-raised btn-round"/> </h:form> 
+            </li>
+        </ul>
+    </div>
+     </h:panelGroup>
+     
+     
+                     
+                     
+</ui:composition>

@@ -1,0 +1,50 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Tasks</title>
+</h:head>
+<body>
+	<h:form>
+		<p:dataTable var="p" value="#{ticketBean.listTickets}">
+			<p:column headerText="id">
+				<h:outputText value="#{p.idTicket}" />
+			</p:column>
+
+			<p:column headerText="Date Lancement">
+				<h:outputText value="#{p.dateLancementSales}" />
+			</p:column>
+
+
+			<p:column headerText="Status">
+				<h:outputText value="#{p.ticketStatus}" />
+			</p:column>
+
+
+			<p:column headerText="Type">
+				<h:outputText value="#{p.ticketType}" />
+			</p:column>
+
+			<p:column headerText="ticketOnline">
+				<h:outputText value="#{p.ticketonline}" />
+			</p:column>
+
+			<p:column headerText="Prix">
+				<h:outputText value="#{p.prixTicket}" />
+			</p:column>
+			<p:column headerText="delete">
+				<h:commandButton
+					action="#{ticketBean.delete(p.idTicket)}"
+					value="delete" />
+			</p:column>
+
+		</p:dataTable>
+	</h:form>
+</body>
+
+</html>

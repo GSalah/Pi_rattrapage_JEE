@@ -1,0 +1,55 @@
+<ui:composition 
+xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	template="/front/front.xhtml"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<ui:define name="back-img">
+		<div class="page-header header-filter" data-parallax="true" style="background-image: url('../resources/Backend/Login/img/background-image.jpg');" ></div>
+	</ui:define>
+	
+	<ui:define name = "content" >
+
+		<div class="main main-raised">
+			<div class="profile-content">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 ml-auto mr-auto">
+							<div class="profile">
+								<div class="avatar">
+									<h:graphicImage value="/resources/Backend/Login/img/president.png" styleClass="img-raised rounded-circle img-fluid" alt="Circle Image" /> 
+								</div>
+								<div class="name">
+									<h3 class="title">#{userBean.email}</h3>
+									<h6>President</h6>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="description text-center">
+						<div class="alert alert-success">
+							<div class="container">
+								<div class="alert-icon">
+									<i class="material-icons">check</i>
+								</div>
+								<button type="button" class="close" data-dismiss="alert"
+									aria-label="Close">
+									<span aria-hidden="true"><i class="material-icons">clear</i></span>
+								</button>
+								<b>Success Alert:</b> Dear #{userBean.email} President your account
+								has been received, it will be reviewed within the next 48 hours.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</ui:define>
+   
+</ui:composition>

@@ -1,0 +1,98 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+
+    <h:outputStylesheet name="Backend/Login/css/google-fonts.css"/> 
+     <h:outputStylesheet name="Backend/Login/css/font-awesome.css"/>
+     <h:outputStylesheet name="Backend/Login/css/material-kit.css"/>    
+</h:head>
+
+<h:body>    
+    <nav class="navbar navbar-default navbar-expand-lg" role="navigation-demo">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-translate">
+                <h:form> <h:commandLink action="/front-pages/index?faces-redirect=true" value="Your Event Guru" styleClass="navbar-brand" /> </h:form> 
+                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+
+            <ui:include src = "/back/navlogin.xhtml" />
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-->
+    </nav>
+    <h:panelGroup styleClass="section section-signup page-header" style="background-image: url('../resources/Backend/Login/img/background-image.jpg');">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 ml-auto mr-auto">
+                <div class="card card-login">
+                <h:form id="form">
+                <div class="card-header card-header-primary text-center">
+                            <h4 class="card-title">Login</h4>
+                        </div>
+                        <h:message for="error" showSummary="true" styleClass="text-danger"/>
+                        <p class="description text-center">Your Event Guru</p>
+                        <div class="card-body">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="material-icons">face</i>
+                                    </span>
+                                </div>
+                                <h:inputText value="#{userBean.email}" pt:placeholder="Email"  styleClass="form-control" />
+                                <!--  @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" }) -->
+                            </div>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="material-icons">lock_outline</i>
+                                    </span>
+                                </div>
+                                <h:inputSecret value="#{userBean.password}" pt:placeholder="Password"  styleClass="form-control" />
+								<!--  @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" }) -->
+                            </div>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="material-icons">how_to_reg</i>
+                                    </span>
+                                </div>
+                                <h:inputText value="#{userBean.tenantName}" pt:placeholder="Tenant"  styleClass="form-control" id="error" />
+                                <!--  @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" }) -->
+                            </div>
+                        </div>
+                        <div class="footer text-center">
+                        	<h:commandButton action="#{userBean.TenantLogin()}" value="Sign In" styleClass="btn btn-primary btn-link btn-wd btn-lg" />
+                        </div>
+                        
+                
+                </h:form>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</h:panelGroup>
+    
+    
+           
+    <!--   Core JS Files   -->
+		<h:outputScript name="Backend/Login/js/jquery.min.js"/> 
+        <h:outputScript name="Backend/Login/js/popper.min.js"/> 
+        <h:outputScript name="Backend/Login/js/bootstrap-material-design.min.js"/> 
+        <h:outputScript name="Backend/Login/js/moment.min.js"/> 
+        <h:outputScript name="Backend/Login/js/material-kit.js"/> 
+ 
+</h:body>
+</html>

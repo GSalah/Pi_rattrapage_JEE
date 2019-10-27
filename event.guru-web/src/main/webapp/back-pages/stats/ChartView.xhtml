@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head></h:head> 
+<body> 
+<p:breadCrumb>
+    <p:menuitem value="" url="#" />
+    <p:menuitem value="Dashboard" url="#" />
+    <p:menuitem value="Home" url="#" />
+    <p:menuitem value="Human Resources" url="#" />
+</p:breadCrumb>
+
+<p:chart type="pie" model="#{chartView.pieModel1}" style="width:400px;height:300px" />
+<br />
+<p:chart type="pie" model="#{chartView.pieModel2}" style="width:400px;height:300px" />
+<br />
+<p:chart type="bar" model="#{chartView.barModel}" style="height:300px"/>
+<br />
+<p:chart type="line" model="#{chartView.lineModel2}" style="height:300px;"/>
+
+</body> 
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	
+	>
+<h:head>
+	<title>Event</title>
+	<script name="jquery/jquery.js" library="primefaces"></script>
+</h:head>
+
+<body>
+	<h:form id="form">
+		<b>Update your Event</b>
+
+
+	</h:form>
+	<h:panelGroup columns="2">
+
+	
+
+	
+		<h:form>
+
+			<h:outputText value="Name"></h:outputText>
+			<h:inputText value="#{eventBean.name}"></h:inputText> <br />
+			
+			<h:outputText value="Picture"></h:outputText>
+			<h:inputText value="#{eventBean.picture}"></h:inputText> <br />
+			
+			<h:outputText value="Theme"></h:outputText>
+			<h:inputText value="#{eventBean.theme}"></h:inputText> <br />
+			
+			<h:outputText value="Location"></h:outputText>
+			<h:inputText value="#{eventBean.location}"></h:inputText> <br />
+			
+			<p:outputLabel for="inline" value="Start Date:" />
+			<p:calendar id="inline" value="#{eventBean.startDate}"
+				mode="inline" /> <br />
+
+			<p:outputLabel for="inline" value="End Date:" />
+			<p:calendar id="inline2" value="#{eventBean.endDate}"
+				mode="inline" /> <br />
+			
+
+			<h:commandButton id="btn" value="Update"
+				action="#{eventBean.MAJEvent(p,id)}" />
+
+
+
+			
+		</h:form>
+	</h:panelGroup>
+
+</body>
+</html>

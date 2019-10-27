@@ -1,0 +1,107 @@
+<ui:composition 
+xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	template="/back/back.xhtml"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<ui:insert name="user_profile">
+                <li class="nav-item active">
+                		<h:form> <h:commandLink action="/back-pages/profile?faces-redirect= true" styleClass="nav-link"> 
+                            <i class="material-icons">person</i>
+                            <p>My Profile</p>
+                        </h:commandLink>
+                        </h:form> 
+                    </li>
+                </ui:insert>
+     <ui:define name="page"> Profile </ui:define>
+     <ui:define name="content"> 
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title">Edit Profile</h4>
+                <p class="card-category">Change your password</p>
+            </div>
+            <div class="card-body">
+                <h:form>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="bmd-label-floating">Current password</label>
+                                <h:inputSecret value="#{userBean.password}" pt:placeholder="Current Password"  styleClass="form-control" />
+                                <!--  @Html.ValidationMessageFor(m => m.OldPassword, "", new { @class = "text-danger" }) -->
+                            </div>
+                        </div>                    
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="bmd-label-floating">New password</label>
+                                <h:inputSecret value="#{userBean.password}" pt:placeholder="New Password"  styleClass="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="bmd-label-floating">Confirm new password</label>
+                                <h:inputSecret value="#{userBean.password}" pt:placeholder="Password"  styleClass="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pull-right">
+                    	<h:commandButton action="#{userBean.TenantLogin()}" value="Change password" styleClass="btn btn-primary pull-right" />
+                        <div class="clearfix"></div>
+                    </div>                
+                </h:form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card card-profile">
+            <div class="card-avatar">
+                    <h:graphicImage value="/resources/Backend/Login/img/president.png" />
+            </div>
+            <div class="card-body">
+                <h6 class="card-category text-gray"> 
+                <h:panelGroup rendered="#{userBean.role.equals('President')}">
+                Welcome President
+                </h:panelGroup>
+                <h:panelGroup rendered="#{userBean.role.equals('Organizer')}">
+                Welcome Organizer
+                </h:panelGroup>
+				</h6>
+                <h4 class="card-title">#{userBean.email}</h4>                 
+                <h:panelGroup rendered="#{userBean.role.equals('President')}">
+                    <br />
+                    <br />
+                    <h:form>
+                    <h:commandButton value="Create Organizer" styleClass="btn btn-primary pull-right" id="create_organizer"> <f:ajax execute="@form" render="@form" /> 
+                    </h:commandButton>
+                    </h:form>
+                    <div id="organizer_form">
+                        <br />
+                        <br />
+                        <br />
+                        <ui:include src="/back/create_orgnizer.xhtml" />
+                    </div>
+                </h:panelGroup>
+                
+            </div>
+        </div>
+    </div>      
+
+</div>
+
+     
+     
+     
+     </ui:define>
+     
+   
+</ui:composition>

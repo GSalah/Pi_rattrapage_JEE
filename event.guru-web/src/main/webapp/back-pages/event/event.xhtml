@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	
+	>
+
+
+<body>
+	<h:form id="form">
+		<b>Events</b>
+
+
+	
+	<h:panelGroup columns="2">
+
+	
+
+	
+		
+
+			<h:dataTable value="#{eventBean.events}" var="e"
+				border="1">
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Name" />
+					</f:facet>
+					<h:outputText value="#{e.name}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Picture" />
+					</f:facet>
+					<h:outputText value="#{e.picture}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Theme" />
+					</f:facet>
+					<h:outputText value="#{e.theme}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Location" />
+					</f:facet>
+					<h:outputText value="#{e.location}" />
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Start Date" />
+					</f:facet>
+					<h:outputText value="#{e.startDate}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="End Date" />
+					</f:facet>
+					<h:outputText value="#{e.endDate}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Action" />
+					</f:facet>
+					
+					<h:commandButton action="#{eventBean.supprimer(e)}"
+						value="Delete" />
+					<h:commandButton action="#{eventBean.Modifier(e)}"
+						value="Update" />
+						
+
+				
+
+
+				</h:column>
+
+				
+
+			</h:dataTable>
+		
+	</h:panelGroup>
+</h:form>
+</body>
+</html>

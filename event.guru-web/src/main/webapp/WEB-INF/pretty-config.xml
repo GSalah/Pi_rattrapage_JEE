@@ -1,0 +1,68 @@
+<!--<pretty-config xmlns="http://ocpsoft.com/prettyfaces/3.2.1"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://ocpsoft.com/prettyfaces/3.2.1
+					   http://ocpsoft.com/xml/ns/prettyfaces/ocpsoft-pretty-faces-3.2.1.xsd">
+ 
+    <url-mapping id="home">
+    	<pattern> /home </pattern>
+    	<view-id> /front-pages/index.jsf </view-id>
+	</url-mapping>
+	<url-mapping id="login">
+    	<pattern> /login </pattern>
+    	<view-id> /front-pages/login.jsf </view-id>
+	</url-mapping>
+	<url-mapping id="register">
+    	<pattern> /register </pattern>
+    	<view-id> /front-pages/register.jsf </view-id>
+	</url-mapping>
+	<url-mapping id="tenant_login">
+    	<pattern> /tenant/login </pattern>
+    	<view-id> /back-pages/login.jsf </view-id>
+	</url-mapping>
+	<url-mapping id="tenant_register">
+    	<pattern> /tenant/register </pattern>
+    	<view-id> /back-pages/register.jsf </view-id>
+	</url-mapping>
+	<url-mapping id="tenant_registered">
+    	<pattern> /tenant/registered </pattern>
+    	<view-id> /back-pages/registered.jsf </view-id>
+	</url-mapping>
+	<url-mapping id="tenant">
+    	<pattern> /tenant </pattern>
+    	<view-id> /back-pages/index.jsf </view-id>
+	</url-mapping>
+	<url-mapping id="tenant">
+    	<pattern> /tenant/profile </pattern>
+    	<view-id> /back-pages/profile.jsf </view-id>
+	</url-mapping>
+	<url-mapping id="tenant_event">
+    	<pattern> /tenant/event </pattern>
+    	<view-id> /back-pages/event.jsf </view-id>
+	</url-mapping>
+	<url-mapping id="tenant_activation">
+    	<pattern> /tenant/activation </pattern>
+    	<view-id> /back-pages/tenant_validation.jsf </view-id>
+	</url-mapping>
+	<url-mapping id="tenant_get_events">
+    	<pattern> /tenant/events </pattern>
+    	<view-id> /back-pages/event/event.jsf </view-id>
+	</url-mapping>
+	<url-mapping id="tenant_create_event">
+    	<pattern> /tenant/event/create </pattern>
+    	<view-id> /back-pages/event/create.jsf </view-id>
+	</url-mapping>
+	<url-mapping id="tenant_edit_event">
+    	<pattern> /tenant/event/edit </pattern>
+    	<view-id> /back-pages/event/edit.jsf </view-id>
+	</url-mapping>
+	<url-mapping id="tenant_stats">
+    	<pattern> /tenant/stats </pattern>
+    	<view-id> /back-pages/stats/ChartView.jsf </view-id>
+	</url-mapping>
+	<url-mapping id="tenant_list_ticket">
+    	<pattern> /tenant/stats/tickets </pattern>
+    	<view-id> /back-pages/stats/ListTicket.jsf </view-id>
+	</url-mapping>
+ 
+</pretty-config>
+-->

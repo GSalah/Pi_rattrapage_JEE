@@ -1,0 +1,26 @@
+<ui:composition 
+xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	template="/back/back.xhtml"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<ui:define name="dashboard">
+                <li class="nav-item active">
+                		<h:form> <h:commandLink action="/back-pages/index?faces-redirect= true" styleClass="nav-link"> 
+                            <i class="material-icons">dashboard</i>
+                            <p>Dashboard</p>
+                        </h:commandLink>
+                        </h:form> 
+                </li>
+     </ui:define>
+     <ui:define name="page"> Dashboard </ui:define>
+     <ui:define name="content"> 
+     <h2> Index</h2> 
+     </ui:define>
+     
+   
+</ui:composition>

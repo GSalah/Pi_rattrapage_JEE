@@ -1,0 +1,41 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:form>
+		<div class="card-body">
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text"> <i class="material-icons">face</i>
+					</span>
+				</div>
+				<h:inputText value="#{userBean.email}" pt:placeholder="Email"
+					styleClass="form-control" />
+			</div>
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text"> <i class="material-icons">lock_outline</i>
+					</span>
+				</div>
+				<h:inputSecret value="#{userBean.password}"
+					pt:placeholder="Password" styleClass="form-control" />
+			</div>
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text"> <i class="material-icons">lock_outline</i>
+					</span>
+				</div>
+				<h:inputSecret value="#{userBean.password}"
+					pt:placeholder="Password" styleClass="form-control" />
+			</div>
+		</div>
+		<div class="footer text-center">
+			<h:commandButton action="#{userBean.TenantLogin()}" value="Create"
+				styleClass="btn btn-primary btn-link btn-wd btn-lg" />
+		</div>
+	</h:form>
+</ui:composition>
